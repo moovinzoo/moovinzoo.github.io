@@ -1,159 +1,23 @@
+{% extends '_layout.swig' %}
+{% import '_macro/post.swig' as post_template %}
+{% import '_macro/sidebar.swig' as sidebar_template %}
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title> | Hexo</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.1/styles/solarized-light.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-    <link rel="stylesheet" href="/custom.css"/>
-    <link rel="manifest" href="/manifest.json" />
-    <link rel="apple-touch-icon" href="/icon512.png">
-    <meta name="theme-color" content="#ffffff"/>
-    
-  <meta name="generator" content="Hexo 5.2.0"></head>
-  <body>
-    <script>
-      if ('serviceWorker' in navigator && false) {
-        window.addEventListener('load', function () {
-          navigator.serviceWorker.register('/sw.js', {scope: '/'})
-            .then(function (registration) {
-              // console.log('ServiceWorker registration successful with scope: ', registration.scope);
-            })
-            .catch(function (err) {
-              console.log('ServiceWorker registration failed: ', err);
-            });
-        });
-      }
-    </script>
-  <div id="page-container">
-    <nav class="navbar nav-shadow" role="navigation" aria-label="main navigation">
-  <div class="container">
-      <div class="navbar-brand">
-          <a class="navbar-item" href="/">
-              <img src="/icon192.png" height="50">
-          </a>
-          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-             data-target="mainNavbar">
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-          </a>
-      </div>
-      <div id="mainNavbar" class="navbar-menu">
-          <div class="navbar-start">
-              <a class="navbar-item" href="/"> Hexo </a>
-              <a class="navbar-item" href="/archives"> Archives </a>
-              <a class="navbar-item" href="/about"> About </a>
-          </div>
-      </div>
-  </div>
-</nav>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-  if ($navbarBurgers.length > 0) {
-    $navbarBurgers.forEach( el => {
-      el.addEventListener('click', () => {
-        const target = el.dataset.target;
-        const $target = document.getElementById(target);
-        el.classList.toggle('is-active');
-        $target.classList.toggle('is-active');
-      });
-    });
-  }
-});
-</script>
-    <div id="content-wrap">
-        <div class="container">
-          <div class="page-card-list">
-  
-    
-          <div class="box">
-              <article class="media">
-                  <div class="media-content">
-                      <div class="content">
-                          <div class="page-card-title"><a href="/2020/10/10/hello-world-2/">Hello World</a></div>
-                          
-                          <a class="tag is-light" href="/archives/2020/10">2020-10-10</a>
-                          
-                            <a class="tag is-light disqus-comment-count" data-disqus-identifier="ckg3725it0000s10v3sjw4o7f" href="/2020/10/10/hello-world-2/#comment">0 Comments</a>       
-                          
-                          <div class="page-card-text">
-                              No description
-                          </div>
-                      </div>
-                  </div>
-              </article>
-          </div>
-  
-          <div class="box">
-              <article class="media">
-                  <div class="media-content">
-                      <div class="content">
-                          <div class="page-card-title"><a href="/2020/10/01/Testing/">Testing</a></div>
-                          
-                            <a class="tag is-light" href='/tags/Blog'>Blog</a>
-                          
-                            <a class="tag is-light" href='/tags/Themes'>Themes</a>
-                          
-                          <a class="tag is-light" href="/archives/2020/10">2020-10-01</a>
-                          
-                            <a class="tag is-light disqus-comment-count" data-disqus-identifier="ckfsmnulb0000os0v5b521437" href="/2020/10/01/Testing/#comment">0 Comments</a>       
-                          
-                          <div class="page-card-text">
-                              No description
-                          </div>
-                      </div>
-                  </div>
-              </article>
-          </div>
-  
-          <div class="box">
-              <article class="media">
-                  <div class="media-content">
-                      <div class="content">
-                          <div class="page-card-title"><a href="/2020/10/01/hello-world/">Hello World</a></div>
-                          
-                          <a class="tag is-light" href="/archives/2020/10">2020-10-01</a>
-                          
-                            <a class="tag is-light disqus-comment-count" data-disqus-identifier="ckfsmnulg0001os0v8rwa4k9t" href="/2020/10/01/hello-world/#comment">0 Comments</a>       
-                          
-                          <div class="page-card-text">
-                              No description
-                          </div>
-                      </div>
-                  </div>
-              </article>
-          </div>
-   
-</div>
-<nav class="pagination is-centered" role="navigation" aria-label="pagination">
-    <a class="pagination-previous shadow" href=".">Previous</a>
-    <a class="pagination-next shadow" href=".">Next Page</a>
-</nav>
-        </div>
-    </div>
-    
-<footer id="footer">
-    <div class="content has-text-centered">
-        <p>
-            © 2020 <a href="http://example.com">John Doe</a>.
-            Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>.
-            Theme <a target="_blank" rel="noopener" href="https://github.com/songquanpeng/hexo-theme-lightx">lightx</a>.
-            
-        </p>
-    </div>
-</footer>
-  </div>
-  
-    <script id="dsq-count-scr" src="//iometa.disqus.com/count.js" async></script>
-  
-  
-  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/highlight.min.js"></script>
-  <script>
-    hljs.initHighlightingOnLoad();
-  </script>
-  </body>
-</html>
+{% block title %}{{ config.title }}{% if theme.index_with_subtitle and config.subtitle %} - {{config.subtitle }}{% endif %}{% endblock %}
+
+{% block page_class %}
+  {% if is_home() %}page-home{% endif -%}
+{% endblock %}
+
+{% block content %}
+  <section id="posts" class="posts-expand">
+    {% for post in page.posts %}
+      {{ post_template.render(post, true) }}
+    {% endfor %}
+  </section>
+
+  {% include '_partials/pagination.swig' %}
+{% endblock %}
+
+{% block sidebar %}
+  {{ sidebar_template.render(false) }}
+{% endblock %}
